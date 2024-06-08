@@ -40,7 +40,6 @@ create_kubeconfig() {
     --namespace="$KUBE_NAMESPACE"
   kubectl config use-context github-deploy
 
-
   mkdir /root/.kube || true
   cp kubeconfig /root/.kube/config
   cp kube.ca.pem /root/.kube/

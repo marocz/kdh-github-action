@@ -35,6 +35,9 @@ inputs:
   CLUSTER:
     description: "Kubernetes Cluster Name"
     required: true
+  COMMAND:
+    description: 'The Command message'
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -49,3 +52,4 @@ runs:
     - ${{ inputs.CI_DEPLOY_PASSWORD }}
     - ${{ inputs.CI_REGISTRY }}
     - ${{ inputs.CLUSTER }}
+    - ${{ inputs.COMMAND }}

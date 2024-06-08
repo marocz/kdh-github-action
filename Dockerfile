@@ -75,3 +75,8 @@ ENV CI_DEPLOY_PASSWORD=$CI_DEPLOY_PASSWORD
 ENV CI_REGISTRY=$CI_REGISTRY
 ENV CLUSTER=$CLUSTER 
 
+# Add the entrypoint script
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

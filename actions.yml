@@ -1,0 +1,51 @@
+name: "Kubernetes Deploy Helper for Github"
+author: "Marocz"
+description: "Kubernetes Deploy Helper"
+branding:
+  icon: "check-circle"
+  color: "blue"
+inputs:
+  KUBE_URL:
+    description: "Cluster Kubernetes URL"
+    required: true
+  KUBE_TOKEN:
+    description: "Cluster Kubernetes Token"
+    required: false
+  KUBE_CA_PEM:
+    description: "Cluster Kubernetes Certificate (PEM)"
+    required: false
+  KUBE_NAMESPACE:
+    description: "Kubernetes Namespace"
+    required: true
+  CI_ENVIRONMENT_SLUG:
+    description: "Environment Slug (dev, staging)"
+    required: true
+  CI_ENVIRONMENT_URL:
+    description: "Database name. Not required for SQLite."
+    required: true
+  CI_DEPLOY_USER:
+    description: "Docker Container Registry Username"
+    required: true
+  CI_DEPLOY_PASSWORD:
+    description: "Docker Container Registry Password"
+    required: true
+  CI_REGISTRY:
+    description: "Docker Container Registry"
+    required: true
+  CLUSTER:
+    description: "Kubernetes Cluster Name"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.KUBE_URL }}
+    - ${{ inputs.KUBE_TOKEN }}
+    - ${{ inputs.KUBE_CA_PEM }}
+    - ${{ inputs.KUBE_NAMESPACE }}
+    - ${{ inputs.CI_ENVIRONMENT_SLUG }}
+    - ${{ inputs.CI_ENVIRONMENT_URL }}
+    - ${{ inputs.CI_DEPLOY_USER }}
+    - ${{ inputs.CI_DEPLOY_PASSWORD }}
+    - ${{ inputs.CI_REGISTRY }}
+    - ${{ inputs.CLUSTER }}

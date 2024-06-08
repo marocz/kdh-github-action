@@ -1,4 +1,4 @@
-name: "Kubernetes Deploy Helper for Github"
+name: "kdh-github-action"
 author: "Marocz"
 description: "Kubernetes Deploy Helper"
 branding:

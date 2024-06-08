@@ -2,8 +2,8 @@ name: "Kubernetes Deploy Helper for Github"
 author: "Marocz"
 description: "Kubernetes Deploy Helper"
 branding:
-  icon: "check-circle"
-  color: "blue"
+  icon: "shield"
+  color: "black"
 inputs:
   KUBE_URL:
     description: "Cluster Kubernetes URL"

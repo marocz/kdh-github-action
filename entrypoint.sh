@@ -3,4 +3,5 @@
 set -e
 
 # Print the input message
-exec "${INPUT_COMMAND}"
+echo "Executing command: ${INPUT_COMMAND}"
+sh -c "${INPUT_COMMAND}"

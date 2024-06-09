@@ -32,6 +32,9 @@ inputs:
   CI_REGISTRY:
     description: "Docker Container Registry"
     required: true
+  CI_REGISTRY_IMAGE:
+    description: "Docker Container Registry Image"
+    required: true
   CLUSTER:
     description: "Kubernetes Cluster Name"
     required: true

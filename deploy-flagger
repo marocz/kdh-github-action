@@ -155,7 +155,7 @@ if [ -d "$CI_PROJECT_DIR/kubernetes" ]; then
       if [[ "$ISCANARY" == "true" && "$track" == "stable" ]]; then
         echo "We are in a canary deployment and this is a stable manifest. Beginning manifest transformation."
         sed -i -e 's/track: stable/track: canary/g' $filename
-        appname=$(yq eval 'metadata.name' $filename)
+        appname=$(yq eval '.metadata.name' $filename)
         sed -i -e "s/name: $appname/name: canary-$appname/g" $filename
         echo "Done transforming manifest, going to cat it out so you can see what it's doing"
         cat $filename

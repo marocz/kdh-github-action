@@ -23,9 +23,9 @@ buildargs_from
 # Set buildargs
 set_buildargs
 
-if [[ -n "$CI_REGISTRY_USER" ]]; then
+if [[ -n "$CI_DEPLOY_USER" ]]; then
 	echo "Logging to Github Container Registry with CI credentials..."
-	docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+	docker login -u "$CI_DEPLOY_USER" -p "$CI_DEPLOY_PASSWORD" "$CI_REGISTRY"
 	echo ""
 fi
 

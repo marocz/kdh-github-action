@@ -11,9 +11,9 @@ export DEPLOY_ROOT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 source "$DEPLOY_ROOT_DIR/src/common.bash"
 
-if [[ -n "$CI_REGISTRY_USER" ]]; then
+if [[ -n "$CI_DEPLOY_USER" ]]; then
 	echo "Logging to Github Container Registry with CI credentials..."
-	docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+	docker login -u "$CI_DEPLOY_USER" -p "$CI_DEPLOY_PASSWORD" "$CI_REGISTRY"
 	echo ""
 fi
 

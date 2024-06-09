@@ -51,5 +51,6 @@ runs:
     - ${{ inputs.CI_DEPLOY_USER }}
     - ${{ inputs.CI_DEPLOY_PASSWORD }}
     - ${{ inputs.CI_REGISTRY }}
+    - ${{ inputs.CI_REGISTRY_IMAGE }}
     - ${{ inputs.CLUSTER }}
     - ${{ inputs.COMMAND }}
